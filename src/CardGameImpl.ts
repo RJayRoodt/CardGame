@@ -18,10 +18,10 @@ interface ICarGame {
 
 class CardGameImpl implements ICarGame {
   readonly params: CardGame_GameParams
-  public cards: string[]
+  public cards: string[];
   public hand: CardGame_Results;
   constructor(params: CardGame_GameParams) {
-    this.params = params;
+    this.params = params
     this.cards = [
       ...CARD_OPTIONS.flatMap((number) =>
         CARD_SUITS.map((suit) => `${number}${suit}`),

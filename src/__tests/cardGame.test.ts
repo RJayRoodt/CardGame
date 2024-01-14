@@ -10,7 +10,7 @@ describe("Card Game Unit testing", () => {
     debug: false,
     shuffleAlgorithm: CardGame_ShuffleAlgorithmEnum.lodash,
     pokerVariant: CardGame_PokerVariantEnum.fiveCard,
-  };
+  }
 
   const CardGame = createCardGameImpl(params);
 

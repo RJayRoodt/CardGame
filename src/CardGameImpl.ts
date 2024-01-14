@@ -11,13 +11,15 @@ const Hand = require("pokersolver").Hand;
 
 interface ICarGame {
   shuffle: () => string[];
-  validateHand: () => CardGame_Results;
-  play: () => CardGame_Results;
+  dealHand: () => void;
+  play: () => void;
+  getGameType: (params: CardGame_GameParams) => number
 }
 
 class CardGameImpl implements ICarGame {
   readonly params: CardGame_GameParams;
-  private cards: string[];
+  public cards: string[];
+  public hand: CardGame_Results;
   constructor(params: CardGame_GameParams) {
     this.params = params;
     this.cards = [
@@ -26,9 +28,10 @@ class CardGameImpl implements ICarGame {
       ),
     ];
     params.debug && console.debug("DEBUG: Cards are:", this.cards);
+    this.hand = {cards: [], description: null}
   }
 
-  private getGameType = (params: CardGame_GameParams) => {
+  public getGameType = (params: CardGame_GameParams) => {
     switch (params.pokerVariant) {
       case CardGame_PokerVariantEnum.badugi:
         return 4;
@@ -52,20 +55,20 @@ class CardGameImpl implements ICarGame {
     return this.cards;
   };
 
-  public validateHand = () => {
+  public dealHand = () => {
     const numberOfCards = this.getGameType(this.params);
     const hand = [...this.cards.splice(0, numberOfCards)];
     this.params.debug && console.debug("DEBUG: Number Cards are", numberOfCards);
     this.params.debug && console.debug("DEBUG: Cards in Hand are", hand);
-    return {
-      hand: hand.join(" "),
+    this.hand =  {
+      cards: hand,
       description: Hand.solve(hand).descr as string,
     };
   };
 
   public play = () => {
     this.shuffle();
-    return this.validateHand();
+    this.dealHand();
   };
 }
 

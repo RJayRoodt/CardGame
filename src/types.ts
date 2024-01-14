@@ -4,7 +4,7 @@ export type CardGame_GameParams = {
   debug: boolean
 };
 
-export type CardGame_Results = { hand: string; description: string }
+export type CardGame_Results = { cards: string[]; description: string | null}
 
 export enum CardGame_ShuffleAlgorithmEnum {
   lodash = "LODASH", // Fisher–Yates shuffle

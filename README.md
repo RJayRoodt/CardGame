@@ -1,6 +1,6 @@
 # Card Game
 
-A nice project with a nice description
+Simple card game
 
 ---
 ## Requirements
@@ -31,16 +31,23 @@ If the installation was successful, you should be able to run the following comm
 
     $ npm run build
 
+## Simple test
+
+    $ npm run test
+
 ## Running the project
 
     $ npm run play
   
-# options
+## Example
+  $ npm run play -- -v SEVENCARD -d TRUE
+
+### options
   debug: -d TRUE 
   poker variant: -v FIVECARD | SEVENCARD | BADUGI
   shuffle algorithm: -a LODASH
 
-# defaults
+### defaults
   -d FALSE
   -v FIVECARD
   -a LODASH

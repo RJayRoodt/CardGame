@@ -26,7 +26,7 @@ export const CARD_OPTIONS = [
   "J",
   "Q",
   "K",
-];
+]
 
 export const getParams = (): Promise<CardGame_GameParams> =>
   new Promise<minimist.ParsedArgs>((resolve, _) =>

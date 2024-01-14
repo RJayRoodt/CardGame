@@ -3,7 +3,7 @@ import { createCardGameImpl } from "../CardGameImpl";
 import {
   CardGame_ShuffleAlgorithmEnum,
   CardGame_PokerVariantEnum,
-} from "../types";
+} from "../types"
 
 describe("Card Game Unit testing", () => {
   const params = {

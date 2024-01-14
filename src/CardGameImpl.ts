@@ -17,9 +17,9 @@ interface ICarGame {
 }
 
 class CardGameImpl implements ICarGame {
-  readonly params: CardGame_GameParams
+  readonly params: CardGame_GameParams 
   public cards: string[];
-  public hand: CardGame_Results;
+  public hand: CardGame_Results; 
   constructor(params: CardGame_GameParams) {
     this.params = params
     this.cards = [

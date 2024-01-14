@@ -1,0 +1,32 @@
+{
+  "name": "card-game",
+  "version": "1.0.0",
+  "description": "Card game",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc --build ./tsconfig.json",
+    "play": "node dist/index.js"
+  },
+  "author": "rjayroodt@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash": "^4.14.202",
+    "@types/minimist": "^1.2.5",
+    "lint-staged": "^15.2.0",
+    "minimist": "^1.2.8",
+    "prettier": "^3.2.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier"
+    ],
+    "*.md": "prettier"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "pokersolver": "^2.1.4"
+  }
+}

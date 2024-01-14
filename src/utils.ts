@@ -26,11 +26,11 @@ export const CARD_OPTIONS = [
   "J",
   "Q",
   "K",
-]
+];
 
 export const getParams = (): Promise<CardGame_GameParams> =>
   new Promise<minimist.ParsedArgs>((resolve, _) =>
-    resolve(minimist(process.argv.splice(2)))
+    resolve(minimist(process.argv.splice(2))),
   ).then((params) => ({
     shuffleAlgorithm:
       params?.a?.toUpperCase?.() ??
@@ -55,7 +55,7 @@ export const validateParams = (params: CardGame_GameParams) =>
         .includes(params.shuffleAlgorithm)
     ) {
       return reject(
-        `Unknown Shuffle Algorithm: ${params.shuffleAlgorithm}, try: ${Object.keys(CardGame_ShuffleAlgorithmEnum).join(", ")}`
+        `Unknown Shuffle Algorithm: ${params.shuffleAlgorithm}, try: ${Object.keys(CardGame_ShuffleAlgorithmEnum).join(", ")}`,
       );
     }
     params.debug && console.log("Poker Variant:", params.pokerVariant);
@@ -65,8 +65,8 @@ export const validateParams = (params: CardGame_GameParams) =>
         .includes(params.pokerVariant)
     ) {
       return reject(
-        `Unknown Poker Variant: ${params.pokerVariant}, try: ${Object.keys(CardGame_PokerVariantEnum).join(", ")}`
+        `Unknown Poker Variant: ${params.pokerVariant}, try: ${Object.keys(CardGame_PokerVariantEnum).join(", ")}`,
       );
     }
-    return resolve()
+    return resolve();
   });

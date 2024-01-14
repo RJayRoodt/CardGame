@@ -1,5 +1,5 @@
 import { createCardGameImpl } from "./src/CardGameImpl";
-import { getParams, validateParams } from "./src/utils"
+import { getParams, validateParams } from "./src/utils";
 
 const init = () =>
   // get input parameters

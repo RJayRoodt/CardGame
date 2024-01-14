@@ -3,16 +3,16 @@ import { createCardGameImpl } from "../CardGameImpl";
 import {
   CardGame_ShuffleAlgorithmEnum,
   CardGame_PokerVariantEnum,
-} from "../types"
+} from "../types";
 
 describe("Card Game Unit testing", () => {
   const params = {
     debug: false,
     shuffleAlgorithm: CardGame_ShuffleAlgorithmEnum.lodash,
     pokerVariant: CardGame_PokerVariantEnum.fiveCard,
-  }
+  };
 
-  const CardGame = createCardGameImpl(params)
+  const CardGame = createCardGameImpl(params);
 
   test("Shuffle Test", () => {
     const beforeShuffle = CardGame.cards;

@@ -7,7 +7,8 @@
     "test": "jest  --config=jest.config.js",
     "build": "tsc --build ./tsconfig.json & npm run test",
     "play": "node dist/index.js",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "prepare": "husky install"
   },
   "author": "rjayroodt@gmail.com",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "@types/jest": "^29.5.11",
     "@types/lodash": "^4.14.202",
     "@types/minimist": "^1.2.5",
+    "husky": "^8.0.3",
     "jest": "^29.7.0",
     "lint-staged": "^15.2.0",
     "minimist": "^1.2.8",

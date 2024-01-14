@@ -2,9 +2,9 @@ import { createCardGameImpl } from "./src/CardGameImpl";
 import { getParams, validateParams } from "./src/utils";
 
 const init = () =>
-// get input parameters
+  // get input parameters
   getParams().then((params) =>
-  // validate input parameters
+    // validate input parameters
     validateParams(params)
       .then(() => {
         // instantiate card game
@@ -16,7 +16,7 @@ const init = () =>
       })
       .catch((err) => {
         console.warn("ERROR", err);
-      })
+      }),
   );
 
 init();

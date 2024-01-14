@@ -6,11 +6,11 @@ import {
 } from "../types";
 
 describe("Card Game Unit testing", () => {
-const params = {
+  const params = {
     debug: false,
     shuffleAlgorithm: CardGame_ShuffleAlgorithmEnum.lodash,
     pokerVariant: CardGame_PokerVariantEnum.fiveCard,
-}
+  };
 
   const CardGame = createCardGameImpl(params);
 
@@ -22,11 +22,10 @@ const params = {
 
   test("Deal Hand Test", () => {
     CardGame.dealHand();
-    const gameType = CardGame.getGameType(params)
-    expect(CardGame.hand.cards.length).toEqual(gameType)
+    const gameType = CardGame.getGameType(params);
+    expect(CardGame.hand.cards.length).toEqual(gameType);
   });
 
-  
   test("Play game Test", () => {
     CardGame.play();
     expect(CardGame.hand.description).toBeDefined();

@@ -13,22 +13,22 @@ interface ICarGame {
   shuffle: () => string[];
   dealHand: () => void;
   play: () => void;
-  getGameType: (params: CardGame_GameParams) => number
+  getGameType: (params: CardGame_GameParams) => number;
 }
 
 class CardGameImpl implements ICarGame {
-  readonly params: CardGame_GameParams;
-  public cards: string[];
+  readonly params: CardGame_GameParams
+  public cards: string[]
   public hand: CardGame_Results;
   constructor(params: CardGame_GameParams) {
     this.params = params;
     this.cards = [
       ...CARD_OPTIONS.flatMap((number) =>
-        CARD_SUITS.map((suit) => `${number}${suit}`)
+        CARD_SUITS.map((suit) => `${number}${suit}`),
       ),
     ];
     params.debug && console.debug("DEBUG: Cards are:", this.cards);
-    this.hand = {cards: [], description: null}
+    this.hand = { cards: [], description: null };
   }
 
   public getGameType = (params: CardGame_GameParams) => {
@@ -51,16 +51,18 @@ class CardGameImpl implements ICarGame {
         this.cards = shuffle<string>(this.cards);
         break;
     }
-    this.params.debug && console.debug("DEBUG: Cards after shuffle", this.cards);
+    this.params.debug &&
+      console.debug("DEBUG: Cards after shuffle", this.cards);
     return this.cards;
   };
 
   public dealHand = () => {
     const numberOfCards = this.getGameType(this.params);
     const hand = [...this.cards.splice(0, numberOfCards)];
-    this.params.debug && console.debug("DEBUG: Number Cards are", numberOfCards);
+    this.params.debug &&
+      console.debug("DEBUG: Number Cards are", numberOfCards);
     this.params.debug && console.debug("DEBUG: Cards in Hand are", hand);
-    this.hand =  {
+    this.hand = {
       cards: hand,
       description: Hand.solve(hand).descr as string,
     };

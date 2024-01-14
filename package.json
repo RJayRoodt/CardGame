@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest  --config=jest.config.js",
     "build": "tsc --build ./tsconfig.json & npm run test",
-    "play": "node dist/index.js"
+    "play": "node dist/index.js",
+    "precommit": "lint-staged"
   },
   "author": "rjayroodt@gmail.com",
   "license": "ISC",
@@ -25,9 +26,9 @@
   },
   "lint-staged": {
     "*.ts": [
-      "prettier"
+      "prettier --write"
     ],
-    "*.md": "prettier"
+    "*.md": "prettier --write"
   },
   "dependencies": {
     "lodash": "^4.17.21",

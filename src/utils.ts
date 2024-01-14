@@ -68,5 +68,5 @@ export const validateParams = (params: CardGame_GameParams) =>
         `Unknown Poker Variant: ${params.pokerVariant}, try: ${Object.keys(CardGame_PokerVariantEnum).join(", ")}`
       );
     }
-    return resolve();
+    return resolve()
   });

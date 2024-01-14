@@ -1,6 +1,6 @@
 export type CardGame_GameParams = {
   pokerVariant: CardGame_PokerVariantEnum;
-  shuffleAlgorithm: CardGame_ShuffleAlgorithmEnum;
+  shuffleAlgorithm: CardGame_ShuffleAlgorithmEnum
   debug: boolean
 }
 

@@ -13,7 +13,7 @@ interface ICarGame {
   shuffle: () => string[];
   dealHand: () => void;
   play: () => void;
-  getGameType: (params: CardGame_GameParams) => number;
+  getGameType: (params: CardGame_GameParams) => number
 }
 
 class CardGameImpl implements ICarGame {

@@ -12,7 +12,7 @@ describe("Card Game Unit testing", () => {
     pokerVariant: CardGame_PokerVariantEnum.fiveCard,
   }
 
-  const CardGame = createCardGameImpl(params);
+  const CardGame = createCardGameImpl(params)
 
   test("Shuffle Test", () => {
     const beforeShuffle = CardGame.cards;
